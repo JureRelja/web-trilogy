@@ -1,0 +1,42 @@
+{
+  "name": "loto-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run db:setup-dev && next dev",
+    "build": "npx prisma db seed && npm run db:setup && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:setup-dev": "npm run db:generate && npm run db:push",
+    "db:setup": "npm run db:generate && npm run db:deploy",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:migrate": "npx prisma migrate dev",
+    "db:deploy": "npx prisma migrate deploy"
+  },
+  "dependencies": {
+    "@auth0/auth0-react": "^2.8.0",
+    "@auth0/nextjs-auth0": "^4.10.0",
+    "@prisma/client": "^6.17.1",
+    "install": "^0.13.0",
+    "next": "15.5.5",
+    "npm": "^11.6.2",
+    "qrcode": "^1.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.5",
+    "prisma": "^6.17.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.6",
+    "typescript": "^5"
+  }
+}
