@@ -5,11 +5,11 @@ export default async function Home() {
   const cards = [
     { title: 'Sastanice', href: '/colleges' },
     { title: 'Studentske udruge', href: '/student-groups' },
+    { title: 'Mentori', href: '/mentors' },
     { title: 'Ponuda poslova', href: '/jobs' },
     { title: 'Pronađi savršeni fakultet', href: '/survey/college' },
     { title: 'Pronađi savršeni posao', href: '/survey/job' },
     { title: 'Pronađi savršenog mentora', href: '/survey/mentor' },
-    { title: 'Mentori', href: '/mentors' },
   ];
 
   return (
