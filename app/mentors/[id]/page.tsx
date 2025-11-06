@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
-export default function MentorDetails({ params }: Props) {
-  const mentor = getMentorById(params.id);
+export default async function MentorDetails({ params }: Props) {
+  const paramsAwaited = await params;
+  const mentor = getMentorById(paramsAwaited.id);
   if (!mentor) notFound();
 
   const img = mentor.image || placeholderImage('400x400', mentor.name);
