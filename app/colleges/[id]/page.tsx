@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
 type Props = {
-  params: { id: string };
+   params: Promise<{ id: string }>
 };
 
 export default async function CollegeDetailsPage({ params }: Props) {
