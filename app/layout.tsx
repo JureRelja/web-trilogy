@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link';
+import Header from './components/Header';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,20 +26,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="font-sans h-screen flex flex-col items-center gap-10">
-          <nav className="flex justify-between items-center p-6 bg-gray-100 w-full">
-            <Link href="/">
-              <h1 className="text-3xl font-bold">Loto Aplikacija</h1>
-            </Link>
-
-            <div className="flex items-center justify-center gap-4">
-              <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
-                <a href="/auth/login">Prijava</a>
-              </button>
-            </div>
-          </nav>
-
-          {children}
+        <div className="font-sans min-h-screen flex flex-col items-center gap-10 w-full">
+          <Header />
+          <main className="w-full max-w-5xl px-4">{children}</main>
         </div>
       </body>
     </html>

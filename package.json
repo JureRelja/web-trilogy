@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run db:setup-dev && next dev",
+    "dev-full": "npm run db:setup-dev && next dev",
+    "dev": "next dev",
     "build-full": "npx prisma db seed && npm run db:setup && next build",
     "build": "next build",
     "start": "next start",
