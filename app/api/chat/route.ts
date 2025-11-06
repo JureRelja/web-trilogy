@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     const reply = data.text || "Nisam siguran kako ti pomoći s tim 🤔";
 
     return NextResponse.json({ reply });
-  } catch (err: any) {
+  } catch (err) {
     console.error("Chat API error:", err);
     return NextResponse.json(
       { reply: "Došlo je do pogreške pri komunikaciji s Chatbase botom 😅" },
