@@ -6,7 +6,7 @@ import { placeholderImage } from '../../lib/placeholders';
 type Props = { job: Job };
 
 const JobCard: React.FC<Props> = ({ job }) => {
-  const avatar = job.image || placeholderImage('96x96', job.company || job.title);
+  const avatar = job.image || placeholderImage('96x96', job.company || job.title, job.imageColor);
 
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">

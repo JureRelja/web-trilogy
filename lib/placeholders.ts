@@ -36,8 +36,8 @@ const COLORS = [
   'tan',
 ];
 
-export function placeholderImage(size: string, text: string) {
-  const bg = COLORS[Math.floor(Math.random() * COLORS.length)];
+export function placeholderImage(size: string, text: string, color?: string) {
+  const bg = color ?? COLORS[Math.floor(Math.random() * COLORS.length)];
   const fg = 'white';
   return `https://placehold.co/${size}/${bg}/${fg}?text=${encodeURIComponent(text)}`;
 }

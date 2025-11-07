@@ -11,7 +11,7 @@ export default async function MentorDetails({ params }: Props) {
   const mentor = getMentorById(paramsAwaited.id);
   if (!mentor) notFound();
 
-  const img = mentor.image || placeholderImage('400x400', mentor.name);
+  const img = mentor.image || placeholderImage('400x400', mentor.name, mentor.imageColor);
 
   return (
     <div className="py-8">

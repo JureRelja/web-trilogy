@@ -8,7 +8,7 @@ type Props = {
 };
 
 const CollegeCard: React.FC<Props> = ({ college }) => {
-  const img = college.image || placeholderImage('400x220', college.name);
+  const img = college.image || placeholderImage('400x220', college.name, college.imageColor);
 
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">

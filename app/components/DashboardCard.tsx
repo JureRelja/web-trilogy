@@ -6,10 +6,11 @@ type Props = {
   title: string;
   href: string;
   image?: string;
+  imageColor?: string;
 };
 
-const DashboardCard: React.FC<Props> = ({ title, href, image }) => {
-  const img = image || placeholderImage('640x360', title);
+const DashboardCard: React.FC<Props> = ({ title, href, image, imageColor }) => {
+  const img = image || placeholderImage('640x360', title, imageColor);
 
   return (
     <Link href={href} className="block max-w-xs w-full">

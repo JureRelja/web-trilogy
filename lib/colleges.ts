@@ -4,6 +4,7 @@ export type College = {
   description: string;
   location?: string;
   image?: string;
+  imageColor?: string;
   programs?: string[];
 };
 
@@ -14,6 +15,7 @@ export const colleges: College[] = [
     description:
       'Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu (FER) vodeća je institucija za obrazovanje i istraživanje u području elektrotehnike, računarstva i informacijskih tehnologija u Hrvatskoj.',
     location: 'Zagreb',
+    imageColor: 'indigo',
   },
   {
     id: '2',
@@ -21,6 +23,7 @@ export const colleges: College[] = [
     description:
       'Građevinski fakultet Sveučilišta u Zagrebu nudi dinamične programe u inženjerstvu, umjetnosti i pomorskim znanostima.',
     location: 'Zagreb',
+    imageColor: 'teal',
   },
   {
     id: '3',
@@ -28,48 +31,62 @@ export const colleges: College[] = [
     description:
       'Likovna akademija Sveučilišta u Zagrebu nudi programe u području likovne umjetnosti, dizajna i vizualnih komunikacija.',
     location: 'Zagreb',
+    imageColor: 'fuchsia',
   },
   {
     id: '4',
     name: 'Ekonomski fakultet',
     description: 'Ekonomski fakultet Sveučilišta u Zagrebu nudi raznolike preddiplomske i diplomske programe.',
     location: 'Zagreb',
+    imageColor: 'amber',
   },
   {
     id: '5',
     name: 'Agronomski fakultet',
-    description: 'Agronomski fakultet Sveučilišta u Zagrebu nudi programe u području poljoprivrede, prehrambene tehnologije i okolišnih znanosti.',
+    description:
+      'Agronomski fakultet Sveučilišta u Zagrebu nudi programe u području poljoprivrede, prehrambene tehnologije i okolišnih znanosti.',
     location: 'Zagreb',
+    imageColor: 'green',
   },
   {
     id: '6',
     name: 'Tehničko veleučilište u Zagrebu',
-    description: 'Tehničko veleučilište u Zagrebu pruža stručne programe usmjerene na praktične vještine i tehnička znanja.',
+    description:
+      'Tehničko veleučilište u Zagrebu pruža stručne programe usmjerene na praktične vještine i tehnička znanja.',
     location: 'Zagreb',
+    imageColor: 'slateblue',
   },
   {
     id: '7',
     name: 'Medicinski fakultet',
-    description: 'Medicinski fakultet Sveučilišta u Zagrebu nudi vrhunske programe iz područja medicine i zdravstvenih znanosti.',
+    description:
+      'Medicinski fakultet Sveučilišta u Zagrebu nudi vrhunske programe iz područja medicine i zdravstvenih znanosti.',
     location: 'Zagreb',
+    imageColor: 'crimson',
   },
   {
     id: '8',
     name: 'Stomatološki fakultet',
-    description: 'Stomatološki fakultet Sveučilišta u Zagrebu specijaliziran je za obrazovanje i istraživanje u području dentalne medicine.',
+    description:
+      'Stomatološki fakultet Sveučilišta u Zagrebu specijaliziran je za obrazovanje i istraživanje u području dentalne medicine.',
     location: 'Zagreb',
+    imageColor: 'coral',
   },
   {
     id: '9',
     name: 'Fakultet strojarstva i brodogradnje',
-    description: 'Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu nudi programe iz područja strojarstva i brodogradnje.',
+    description:
+      'Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu nudi programe iz područja strojarstva i brodogradnje.',
     location: 'Zagreb',
+    imageColor: 'sky',
   },
-   {
+  {
     id: '10',
     name: 'Filozofski fakultet',
-    description: 'Filozofski fakultet Sveučilišta u Zagrebu nudi programe iz područja filozofije, sociologije i psihologije.',
+    description:
+      'Filozofski fakultet Sveučilišta u Zagrebu nudi programe iz područja filozofije, sociologije i psihologije.',
     location: 'Zagreb',
+    imageColor: 'lime',
   },
 ];
 

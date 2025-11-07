@@ -6,7 +6,7 @@ import { placeholderImage } from '../../lib/placeholders';
 type Props = { group: StudentGroup };
 
 const StudentGroupCard: React.FC<Props> = ({ group }) => {
-  const img = group.image || placeholderImage('400x220', group.name);
+  const img = group.image || placeholderImage('400x220', group.name, group.imageColor);
 
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">

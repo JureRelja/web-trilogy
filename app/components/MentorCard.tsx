@@ -6,7 +6,7 @@ import { placeholderImage } from '../../lib/placeholders';
 type Props = { mentor: Mentor };
 
 const MentorCard: React.FC<Props> = ({ mentor }) => {
-  const img = mentor.image || placeholderImage('400x400', mentor.name);
+  const img = mentor.image || placeholderImage('400x400', mentor.name, mentor.imageColor);
 
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">

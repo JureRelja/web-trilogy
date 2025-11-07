@@ -11,7 +11,7 @@ export default async function StudentGroupDetails({ params }: Props) {
   const group = getStudentGroupById(paramsAwaited.id);
   if (!group) notFound();
 
-  const img = group.image || placeholderImage('800x360', group.name);
+  const img = group.image || placeholderImage('800x360', group.name, group.imageColor);
 
   return (
     <div className="py-8">

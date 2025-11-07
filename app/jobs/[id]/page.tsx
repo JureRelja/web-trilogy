@@ -11,7 +11,7 @@ export default async function JobDetails({ params }: Props) {
   const job = getJobById(paramsAwaited.id);
   if (!job) notFound();
 
-  const img = job.image || placeholderImage('800x360', job.title);
+  const img = job.image || placeholderImage('800x360', job.title, job.imageColor);
 
   return (
     <div className="py-8">

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
 type Props = {
-   params: Promise<{ id: string }>
+  params: Promise<{ id: string }>;
 };
 
 export default async function CollegeDetailsPage({ params }: Props) {
@@ -16,7 +16,8 @@ export default async function CollegeDetailsPage({ params }: Props) {
     notFound();
   }
 
-  const img = college?.image || placeholderImage('800x360', college?.name || 'College');
+  const img =
+    college?.image || placeholderImage('800x360', college?.name || 'College', college?.imageColor || undefined);
 
   return (
     <div className="py-8">
