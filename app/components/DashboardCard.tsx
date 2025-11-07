@@ -10,12 +10,12 @@ type Props = {
 };
 
 const DashboardCard: React.FC<Props> = ({ title, href, image, imageColor }) => {
-  const img = image || placeholderImage('640x360', title, imageColor);
+  const img = image || placeholderImage('480x270', title, imageColor);
 
   return (
     <Link href={href} className="block max-w-xs w-full">
       <article className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-200">
-        <div className="w-full h-44 md:h-56 lg:h-64 overflow-hidden">
+        <div className="w-full h-28 md:h-40 lg:h-44 overflow-hidden">
           <img src={img} alt={title} className="w-full h-full object-cover" />
         </div>
         <div className="p-6">

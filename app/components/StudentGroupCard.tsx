@@ -11,7 +11,7 @@ const StudentGroupCard: React.FC<Props> = ({ group }) => {
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
       <Link href={`/student-groups/${group.id}`} className="block">
-        <img src={img} alt={group.name} className="w-full h-44 object-cover" />
+      <img src={img} alt={group.name} className="w-full h-26 object-contain" />
         <div className="p-4">
           <h3 className="text-lg font-semibold">{group.name}</h3>
           {group.city && <p className="text-sm text-gray-500">{group.city}</p>}

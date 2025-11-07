@@ -11,8 +11,8 @@ const MentorCard: React.FC<Props> = ({ mentor }) => {
   return (
     <article className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
       <Link href={`/mentors/${mentor.id}`} className="block">
-        <div className="w-full h-44 flex items-center justify-center overflow-hidden bg-gray-50">
-          <img src={img} alt={mentor.name} className="w-28 h-28 rounded-full object-cover" />
+        <div className="w-full h-28 flex items-center justify-center overflow-hidden bg-gray-50">
+          <img src={img} alt={mentor.name} className="w-20 h-20 rounded-full object-cover" />
         </div>
         <div className="p-4">
           <h3 className="text-lg font-semibold">{mentor.name}</h3>

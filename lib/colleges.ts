@@ -16,6 +16,7 @@ export const colleges: College[] = [
       'Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu (FER) vodeća je institucija za obrazovanje i istraživanje u području elektrotehnike, računarstva i informacijskih tehnologija u Hrvatskoj.',
     location: 'Zagreb',
     imageColor: 'indigo',
+    image: '/colleges/fer_logo.png',
   },
   {
     id: '2',
@@ -24,6 +25,7 @@ export const colleges: College[] = [
       'Građevinski fakultet Sveučilišta u Zagrebu nudi dinamične programe u inženjerstvu, umjetnosti i pomorskim znanostima.',
     location: 'Zagreb',
     imageColor: 'teal',
+    image: '/colleges/gradjevina_logo.png',
   },
   {
     id: '3',
@@ -32,6 +34,7 @@ export const colleges: College[] = [
       'Likovna akademija Sveučilišta u Zagrebu nudi programe u području likovne umjetnosti, dizajna i vizualnih komunikacija.',
     location: 'Zagreb',
     imageColor: 'fuchsia',
+    image: '/colleges/likovna_akademija.png',
   },
   {
     id: '4',
@@ -39,6 +42,7 @@ export const colleges: College[] = [
     description: 'Ekonomski fakultet Sveučilišta u Zagrebu nudi raznolike preddiplomske i diplomske programe.',
     location: 'Zagreb',
     imageColor: 'amber',
+    image: '/colleges/efzg_logo.png',
   },
   {
     id: '5',
@@ -47,6 +51,7 @@ export const colleges: College[] = [
       'Agronomski fakultet Sveučilišta u Zagrebu nudi programe u području poljoprivrede, prehrambene tehnologije i okolišnih znanosti.',
     location: 'Zagreb',
     imageColor: 'green',
+    image: '/colleges/agronomski_logo.png',
   },
   {
     id: '6',
@@ -55,6 +60,7 @@ export const colleges: College[] = [
       'Tehničko veleučilište u Zagrebu pruža stručne programe usmjerene na praktične vještine i tehnička znanja.',
     location: 'Zagreb',
     imageColor: 'slateblue',
+    image: '/colleges/tz_logo.svg',
   },
   {
     id: '7',
@@ -63,6 +69,7 @@ export const colleges: College[] = [
       'Medicinski fakultet Sveučilišta u Zagrebu nudi vrhunske programe iz područja medicine i zdravstvenih znanosti.',
     location: 'Zagreb',
     imageColor: 'crimson',
+    image: '/colleges/medicina_logo.png',
   },
   {
     id: '8',
@@ -71,6 +78,7 @@ export const colleges: College[] = [
       'Stomatološki fakultet Sveučilišta u Zagrebu specijaliziran je za obrazovanje i istraživanje u području dentalne medicine.',
     location: 'Zagreb',
     imageColor: 'coral',
+    image: '/colleges/stomatoloski_logo.png',
   },
   {
     id: '9',
@@ -79,6 +87,7 @@ export const colleges: College[] = [
       'Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu nudi programe iz područja strojarstva i brodogradnje.',
     location: 'Zagreb',
     imageColor: 'sky',
+    image: '/colleges/fsb_logo.png',
   },
   {
     id: '10',
@@ -87,6 +96,7 @@ export const colleges: College[] = [
       'Filozofski fakultet Sveučilišta u Zagrebu nudi programe iz područja filozofije, sociologije i psihologije.',
     location: 'Zagreb',
     imageColor: 'lime',
+    image: '/colleges/ffzg_logo.png',
   },
 ];
 

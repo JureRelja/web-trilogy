@@ -14,6 +14,7 @@ export const studentGroups: StudentGroup[] = [
     description: 'Studentska udruga za razvoj tehničkih i društvenih vještina u području elektrotehnike i računarstva.',
     city: 'Zagreb',
     imageColor: 'navy',
+    image: '/student-groups/eestec_logo.png',
   },
   {
     id: '2',
@@ -21,6 +22,7 @@ export const studentGroups: StudentGroup[] = [
     description: 'Studentska udruga koja potiče profesionalni razvoj kroz edukacije i razmjenu iskustava.',
     city: 'Zagreb',
     imageColor: 'teal',
+    image: '/student-groups/best_logo.jpg',
   },
   {
     id: '3',
@@ -28,20 +30,31 @@ export const studentGroups: StudentGroup[] = [
     description: 'Klub studenata elektrotehnike i računarstva, poznat po organizaciji evenata i radionica.',
     city: 'Zagreb',
     imageColor: 'purple',
+    image: '/student-groups/kset_logo.png',
   },
   {
     id: '4',
-    name: 'Robotics Club Zagreb',
-    description: 'Studentski klub fokusiran na robotiku i natjecanja.',
+    name: 'E student',
+    description: 'Studentska udruga usmjerena na promicanje tehničkog obrazovanja i inovacija.',
     city: 'Zagreb',
     imageColor: 'indigo',
+    image: '/student-groups/estudent_logo.png',
   },
   {
     id: '5',
-    name: 'Environmental Action Group',
-    description: 'Udruga za održivost i projekte vezane uz okoliš.',
-    city: 'Rijeka',
+    name: 'HAZef',
+    description: 'Hrvatska akademska zajednica za zaštitu okoliša i prirode.',
+    city: 'Zagreb',
     imageColor: 'seagreen',
+    image: '/student-groups/hazef_logo.png',
+  },
+  {
+    id: '6',
+    name: 'Financijski klub',
+    description: 'Studentska udruga fokusirana na financije i poduzetništvo.',
+    city: 'Zagreb',
+    imageColor: 'seagreen',
+    image: '/student-groups/financijski_klub_logo.png',
   },
 ];
 
