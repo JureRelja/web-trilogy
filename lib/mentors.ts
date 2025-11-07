@@ -25,7 +25,7 @@ export const mentors: Mentor[] = [
   },
   {
     id: '16',
-    name: "izv. prof. dr. sc. Vlado Sruk",
+    name: "Vlado Sruk",
     bio: 'Izvanredni profesor, Zavod za elektroniku, mikroelektroniku, računalne i inteligentne sustave',
     college: 'Fakultet elektrotehnike i računarstva, Zagreb',
     imageColor: 'amber',
