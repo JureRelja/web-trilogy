@@ -30,7 +30,7 @@ export const studentGroups: StudentGroup[] = [
       {
         id: 'plc-2025',
         title: 'PLC (Programmable Logic Controllers)',
-        image: '/student-groups/PLC_logo.svg',
+        image: '/student-groups/PLC_Logo.svg',
         description:
           'Projektiranje sustava pomoću PLC-ova, programerske tehnike i 24-satno natjecanje.',
         dates: '13. – 27. listopada 2025.',
@@ -40,7 +40,7 @@ export const studentGroups: StudentGroup[] = [
       {
         id: 'web-trilogy-2025',
         title: 'Web Trilogy',
-        image: '/student-groups/WEB_logo.png',
+        image: '/student-groups/WEB_Logo.png',
         description:
           'Tri međusobno povezana modula: dizajn, frontend i backend. Polaznici prolaze cijeli razvojni ciklus kroz zadatke i mini-projekt.',
         dates: '3. - 8. studenog 2025.',
@@ -102,6 +102,14 @@ export const studentGroups: StudentGroup[] = [
     imageColor: 'purple',
     image: '/student-groups/kset_logo.png',
   },
+   {
+    id: '7',
+    name: 'SUSFER',
+    description: 'Sportska udruga studenata FER-a.',
+    city: 'Zagreb',
+    imageColor: 'seagreen',
+    image: '/student-groups/susfer_logo.jpeg',
+  },
   {
     id: '4',
     name: 'E student',
@@ -126,6 +134,7 @@ export const studentGroups: StudentGroup[] = [
     imageColor: 'seagreen',
     image: '/student-groups/financijski_klub_logo.png',
   },
+ 
 ];
 
 export function getStudentGroupById(id: string) {
