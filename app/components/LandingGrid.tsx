@@ -11,7 +11,7 @@ export default function LandingGrid() {
   const [surveyType, setSurveyType] = useState<'college' | 'job' | 'mentor'>('college');
 
   const cards: Card[] = [
-    { title: 'Sastanice', href: '/colleges', imageColor: 'indigo', icon: 'meetings' },
+    { title: 'Sastavnice', href: '/colleges', imageColor: 'indigo', icon: 'meetings' },
     { title: 'Studentske udruge', href: '/student-groups', imageColor: 'teal', icon: 'groups' },
     { title: 'Mentori', href: '/mentors', imageColor: 'fuchsia', icon: 'mentors' },
     { title: 'Ponuda poslova', href: '/jobs', imageColor: 'orange', icon: 'jobs' },

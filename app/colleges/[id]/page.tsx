@@ -22,7 +22,7 @@ export default async function CollegeDetailsPage({ params }: Props) {
   return (
     <div className="py-8">
       <Link href="/colleges" className="text-sm text-blue-600 hover:underline">
-        ← Povratak na sve sastanice
+        ← Povratak na sve sastavnice
       </Link>
 
       <header className="mt-4 mb-6">
