@@ -8,6 +8,7 @@ type Card = { title: string; href?: string; imageColor?: string; icon?: string }
 
 export default function LandingGrid() {
   const [openSurvey, setOpenSurvey] = useState(false);
+  const [surveyType, setSurveyType] = useState<'college' | 'job' | 'mentor'>('college');
 
   const cards: Card[] = [
     { title: 'Sastanice', href: '/colleges', imageColor: 'indigo', icon: 'meetings' },
@@ -30,7 +31,30 @@ export default function LandingGrid() {
                   title={c.title}
                   imageColor={c.imageColor}
                   icon={c.icon}
-                  onClick={() => setOpenSurvey(true)}
+                  onClick={() => {
+                    setSurveyType('college');
+                    setOpenSurvey(true);
+                  }}
+                />
+              ) : c.title === 'Pronađi savršeni posao' ? (
+                <DashboardCard
+                  title={c.title}
+                  imageColor={c.imageColor}
+                  icon={c.icon}
+                  onClick={() => {
+                    setSurveyType('job');
+                    setOpenSurvey(true);
+                  }}
+                />
+              ) : c.title === 'Pronađi savršenog mentora' ? (
+                <DashboardCard
+                  title={c.title}
+                  imageColor={c.imageColor}
+                  icon={c.icon}
+                  onClick={() => {
+                    setSurveyType('mentor');
+                    setOpenSurvey(true);
+                  }}
                 />
               ) : (
                 <DashboardCard title={c.title} href={c.href} imageColor={c.imageColor} icon={c.icon} />
@@ -40,7 +64,7 @@ export default function LandingGrid() {
         </div>
       </div>
 
-      <SurveyModal open={openSurvey} onClose={() => setOpenSurvey(false)} />
+      <SurveyModal open={openSurvey} onClose={() => setOpenSurvey(false)} surveyType={surveyType} />
     </div>
   );
 }

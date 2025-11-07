@@ -2,11 +2,17 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { colleges } from '../../lib/colleges';
+import { jobs } from '../../lib/jobs';
+import { mentors } from '../../lib/mentors';
+import type { College } from '../../lib/colleges';
+import type { Job } from '../../lib/jobs';
+import type { Mentor } from '../../lib/mentors';
 import Link from 'next/link';
 
 type Props = {
   open: boolean;
   onClose: () => void;
+  surveyType?: 'college' | 'job' | 'mentor';
 };
 
 type Answer = {
@@ -14,7 +20,7 @@ type Answer = {
   tags: string[]; // tags to score
 };
 
-export default function SurveyModal({ open, onClose }: Props) {
+export default function SurveyModal({ open, onClose, surveyType = 'college' }: Props) {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
@@ -25,8 +31,159 @@ export default function SurveyModal({ open, onClose }: Props) {
   const [direction, setDirection] = useState<'left' | 'right'>('left');
   const [mounted, setMounted] = useState(false);
 
-  const questions = useMemo(
-    () => [
+  const questions = useMemo(() => {
+    // provide different question sets depending on surveyType
+    if (surveyType === 'job') {
+      return [
+        {
+          id: 'q1',
+          question: 'Koje područje zapošljavanja te najviše zanima?',
+          options: [
+            { label: 'Razvoj softvera / IT', tags: ['it', 'software', 'engineering'] },
+            { label: 'Dizajn i proizvod', tags: ['design', 'ux', 'product'] },
+            { label: 'Marketing / Prodaja', tags: ['marketing', 'sales'] },
+            { label: 'Operacije / DevOps', tags: ['devops', 'operations'] },
+          ],
+        },
+        {
+          id: 'q2',
+          question: 'Preferiraš rad u start-upu ili velikoj kompaniji?',
+          options: [
+            { label: 'Start-up / mala firma', tags: ['startup', 'entrepreneurship'] },
+            { label: 'Velika korporacija', tags: ['corporate', 'stable'] },
+          ],
+        },
+        {
+          id: 'q3',
+          question: 'Imaš li preferenciju za lokaciju?',
+          options: [
+            { label: 'Veći grad', tags: ['urban'] },
+            { label: 'Manje mjesto / remote', tags: ['remote', 'rural'] },
+          ],
+        },
+        {
+          id: 'q4',
+          question: 'Želiš li posao koji uključuje puno timskog rada?',
+          options: [
+            { label: 'Da, timski rad', tags: ['team'] },
+            { label: 'Rad samostalno', tags: ['independent'] },
+          ],
+        },
+        {
+          id: 'q5',
+          question: 'Koliko ti je bitna mogućnost brzog napredovanja?',
+          options: [
+            { label: 'Vrlo bitna', tags: ['growth'] },
+            { label: 'Nije presudno', tags: ['stable'] },
+          ],
+        },
+        {
+          id: 'q6',
+          question: 'Koji tip zaposlenja preferiraš?',
+          options: [
+            { label: 'Puno radno vrijeme', tags: ['full-time'] },
+            { label: 'Djelomično / pola radnog vremena', tags: ['part-time'] },
+            { label: 'Projektno / ugovor', tags: ['contract'] },
+          ],
+        },
+        {
+          id: 'q7',
+          question: 'Koliko ti je važna visina plaće / beneficija?',
+          options: [
+            { label: 'Vrlo važna', tags: ['compensation'] },
+            { label: 'Umjereno važna', tags: ['balanced'] },
+            { label: 'Nije presudno', tags: ['purpose'] },
+          ],
+        },
+        {
+          id: 'q8',
+          question: 'Želiš li posao koji uključuje mentorstvo i učenje na poslu?',
+          options: [
+            { label: 'Da, važan mi je razvoj i mentorstvo', tags: ['mentorship', 'training'] },
+            { label: 'Ne, preferiram samostalan napredak', tags: ['independent'] },
+          ],
+        },
+      ];
+    }
+
+    if (surveyType === 'mentor') {
+      return [
+        {
+          id: 'q1',
+          question: 'Kakvu pomoć želiš od mentora?',
+          options: [
+            { label: 'Tehničko mentorstvo (kod, arhitektura)', tags: ['technical', 'engineering'] },
+            { label: 'Karijerno savjetovanje i CV', tags: ['career', 'cv'] },
+            { label: 'Poduzetništvo i proizvod', tags: ['entrepreneurship', 'product'] },
+            { label: 'Dizajn i UX', tags: ['design', 'ux'] },
+          ],
+        },
+        {
+          id: 'q2',
+          question: 'Preferiraš mentora s akademskim ili industrijskim iskustvom?',
+          options: [
+            { label: 'Akademsko iskustvo', tags: ['academia', 'research'] },
+            { label: 'Industrijsko iskustvo', tags: ['industry', 'practical'] },
+          ],
+        },
+        {
+          id: 'q3',
+          question: 'Koliko često želiš biti u kontaktu?',
+          options: [
+            { label: 'Redovito (tjedno / mjesečno)', tags: ['regular'] },
+            { label: 'Povremeno po potrebi', tags: ['on-demand'] },
+          ],
+        },
+        {
+          id: 'q4',
+          question: 'Koju industriju preferiraš za mentora?',
+          options: [
+            { label: 'Tehnologija / softver', tags: ['technical', 'it'] },
+            { label: 'Poslovanje / proizvod', tags: ['business', 'product'] },
+            { label: 'Dizajn / UX', tags: ['design'] },
+            { label: 'Istraživanje / akademija', tags: ['research', 'academia'] },
+          ],
+        },
+        {
+          id: 'q5',
+          question: 'Koji način komunikacije preferiraš?',
+          options: [
+            { label: 'Video pozivi / sastanci', tags: ['video'] },
+            { label: 'Pisani kanali (e-mail / chat)', tags: ['chat'] },
+            { label: 'U živo / praktična sesija', tags: ['in-person'] },
+          ],
+        },
+        {
+          id: 'q6',
+          question: 'Kakvo iskustvo mentora preferiraš?',
+          options: [
+            { label: 'Iskusni (seniori, voditelji)', tags: ['senior'] },
+            { label: 'Srednje razine (praktični mentori)', tags: ['mid'] },
+            { label: 'Rani stadij / grow-with-you', tags: ['junior'] },
+          ],
+        },
+        {
+          id: 'q7',
+          question: 'Koji je tvoj glavni cilj s mentorstvom?',
+          options: [
+            { label: 'Promjena karijere', tags: ['career-switch'] },
+            { label: 'Produbljivanje znanja / skillovi', tags: ['skill'] },
+            { label: 'Umrežavanje i kontakti', tags: ['networking'] },
+          ],
+        },
+        {
+          id: 'q8',
+          question: 'Tražiš li kratkoročnu pomoć ili dugoročan odnos?',
+          options: [
+            { label: 'Kratkoročna (specifičan projekt)', tags: ['short-term'] },
+            { label: 'Dugoročna suradnja', tags: ['long-term'] },
+          ],
+        },
+      ];
+    }
+
+    // default: college questions
+    return [
       {
         id: 'q1',
         question: 'Koja vrsta studija te najviše zanima?',
@@ -93,9 +250,8 @@ export default function SurveyModal({ open, onClose }: Props) {
           { label: 'Stabilna korporativna karijera', tags: ['corporate'] },
         ],
       },
-    ],
-    [],
-  );
+    ];
+  }, [surveyType]);
 
   const progress = Math.round(((history.length + (answers ? 1 : 0)) / questions.length) * 100);
 
@@ -185,18 +341,51 @@ export default function SurveyModal({ open, onClose }: Props) {
   }
 
   function computeRecommendation() {
-    // simple scoring: for each college, count matches between history tags and college.tags
+    // Build tag counts from history + current answer
     const tagCounts: Record<string, number> = {};
     history.forEach((a) => a.tags.forEach((t) => (tagCounts[t] = (tagCounts[t] || 0) + 1)));
-    // include current (answers) if present
     if (answers) answers.tags.forEach((t) => (tagCounts[t] = (tagCounts[t] || 0) + 1));
 
-    const scored = colleges.map((c) => {
-      const score = (c.tags || []).reduce((s, t) => s + (tagCounts[t] || 0), 0);
-      return { college: c, score };
-    });
-    scored.sort((a, b) => b.score - a.score);
-    return scored[0]?.college || colleges[0];
+    if (surveyType === 'college') {
+      const scored = colleges.map((c) => {
+        const score = (c.tags || []).reduce((s, t) => s + (tagCounts[t] || 0), 0);
+        return { college: c, score };
+      });
+      scored.sort((a, b) => b.score - a.score);
+      return scored[0]?.college || colleges[0];
+    }
+
+    // For jobs/mentors: do a simple keyword match scoring against textual fields
+    const matchesText = (text = '', tag = '') => text.toLowerCase().includes(tag.toLowerCase());
+
+    if (surveyType === 'job') {
+      const scored = jobs.map((j) => {
+        const hay = `${j.title} ${j.company} ${j.description || ''}`.toLowerCase();
+        let score = 0;
+        Object.keys(tagCounts).forEach((tag) => {
+          if (matchesText(hay, tag)) score += tagCounts[tag];
+        });
+        return { job: j, score };
+      });
+      scored.sort((a, b) => b.score - a.score);
+      return scored[0]?.job || jobs[0];
+    }
+
+    // mentors
+    if (surveyType === 'mentor') {
+      const scored = mentors.map((m) => {
+        const hay = `${m.name} ${m.bio || ''} ${m.college || ''}`.toLowerCase();
+        let score = 0;
+        Object.keys(tagCounts).forEach((tag) => {
+          if (matchesText(hay, tag)) score += tagCounts[tag];
+        });
+        return { mentor: m, score };
+      });
+      scored.sort((a, b) => b.score - a.score);
+      return scored[0]?.mentor || mentors[0];
+    }
+
+    return colleges[0];
   }
 
   const finished = index >= questions.length - 1 && answers !== null && history.length === questions.length - 1;
@@ -215,7 +404,13 @@ export default function SurveyModal({ open, onClose }: Props) {
       >
         <div className="p-4 border-b flex items-center justify-between bg-gradient-to-r from-indigo-500 to-pink-500 text-white rounded-t-lg">
           <div>
-            <h3 className="text-lg font-semibold">🎓 Anketa — Pronađi savršeni fakultet</h3>
+            <h3 className="text-lg font-semibold">
+              {surveyType === 'college'
+                ? '🎓 Anketa — Pronađi savršeni fakultet'
+                : surveyType === 'job'
+                ? '💼 Anketa — Pronađi savršeni posao'
+                : '🤝 Anketa — Pronađi savršenog mentora'}
+            </h3>
             <p className="text-sm opacity-80">Odgovori na nekoliko pitanja i dobit ćeš preporuku.</p>
           </div>
           <button className="text-white text-2xl leading-none" onClick={onClose} aria-label="Zatvori">
@@ -362,16 +557,56 @@ export default function SurveyModal({ open, onClose }: Props) {
               <p className="text-sm text-gray-600 mb-4">Na temelju tvojih odgovora, preporučamo sljedeći fakultet:</p>
               {(() => {
                 const rec = computeRecommendation();
+                if (surveyType === 'college') {
+                  const college = rec as College;
+                  return (
+                    <div className="p-4 border rounded-lg bg-gray-50">
+                      <h5 className="text-lg font-semibold">{college.name}</h5>
+                      <p className="text-sm text-gray-700 mt-2">{college.description}</p>
+                      <div className="mt-4">
+                        <Link
+                          href={`/colleges/${college.id}`}
+                          className="inline-block px-4 py-2 bg-indigo-600 text-white rounded"
+                        >
+                          Pogledaj fakultet
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (surveyType === 'job') {
+                  const job = rec as Job;
+                  return (
+                    <div className="p-4 border rounded-lg bg-gray-50">
+                      <h5 className="text-lg font-semibold">{job.title}</h5>
+                      <p className="text-sm text-gray-700 mt-1">{job.company}</p>
+                      <p className="text-sm text-gray-700 mt-2">{job.description}</p>
+                      <div className="mt-4">
+                        <Link
+                          href={`/jobs/${job.id}`}
+                          className="inline-block px-4 py-2 bg-indigo-600 text-white rounded"
+                        >
+                          Pogledaj posao
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // mentor
+                const mentor = rec as Mentor;
                 return (
                   <div className="p-4 border rounded-lg bg-gray-50">
-                    <h5 className="text-lg font-semibold">{rec.name}</h5>
-                    <p className="text-sm text-gray-700 mt-2">{rec.description}</p>
+                    <h5 className="text-lg font-semibold">{mentor.name}</h5>
+                    <p className="text-sm text-gray-700 mt-1">{mentor.bio}</p>
+                    <p className="text-sm text-gray-600 mt-2 italic">{mentor.college}</p>
                     <div className="mt-4">
                       <Link
-                        href={`/colleges/${rec.id}`}
+                        href={`/mentors/${mentor.id}`}
                         className="inline-block px-4 py-2 bg-indigo-600 text-white rounded"
                       >
-                        Pogledaj fakultet
+                        Kontaktiraj mentora
                       </Link>
                     </div>
                   </div>
