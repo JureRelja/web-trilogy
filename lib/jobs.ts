@@ -14,7 +14,8 @@ export const jobs: Job[] = [
     title: 'Frontend pripravnik',
     company: 'Acme Tech',
     location: 'Zagreb',
-    description: '3-mjesečna praksa rada na React aplikacijama.',
+    description:
+      '3-mjesečna praksa rada na React aplikacijama s mentoriranjem. Sudjelovanje u razvoju novih komponenti, sitnim popravcima bugova i pisanju osnovnih testova. Idealno za studente koji žele naučiti standardne timske procese (Git, code review, CI/CD).',
     imageColor: 'orange',
   },
   {
@@ -22,7 +23,8 @@ export const jobs: Job[] = [
     title: 'Analitičar podataka',
     company: 'Insight Labs',
     location: 'Split',
-    description: 'Početnička pozicija za analitičara; poželjno poznavanje SQL-a i Pythona.',
+    description:
+      'Početnička pozicija za analitičara podataka. Radi se na pripremi skupova podataka, pisanju SQL upita, izradi izvještaja i osnovnoj analitici u Pythonu. Poželjno poznavanje Pandasa i alata za vizualizaciju (Metabase, Power BI).',
     imageColor: 'teal',
   },
   {
@@ -30,7 +32,8 @@ export const jobs: Job[] = [
     title: 'Asistent/ica u marketingu',
     company: 'Creative Co.',
     location: 'Rijeka',
-    description: 'Podrška marketinškim kampanjama i upravljanju društvenim mrežama.',
+    description:
+      'Podrška marketinškim kampanjama, društvenim mrežama i izradi sadržaja. Suradnja s dizajn timom, priprema newslettera i analiza učinka kampanja. Od kandidata se očekuje odlična pismenost i proaktivnost.',
     imageColor: 'coral',
   },
   {
@@ -38,7 +41,8 @@ export const jobs: Job[] = [
     title: 'Backend developer',
     company: 'NovaSoft',
     location: 'Zagreb',
-    description: 'Razvoj REST/GraphQL API-ja u Node.js-u, rad s bazama podataka.',
+    description:
+      'Razvoj REST/GraphQL API-ja u Node.js-u te rad s relacijskim i NoSQL bazama. Sudjelovanje u dizajnu arhitekture, code reviewu i automatiziranim testovima. Poznavanje TypeScripta je prednost.',
     imageColor: 'indigo',
   },
   {
@@ -46,7 +50,8 @@ export const jobs: Job[] = [
     title: 'UX/UI dizajner',
     company: 'Studio Kreativa',
     location: 'Split',
-    description: 'Dizajn korisničkih sučelja, prototipiranje i testiranje upotrebljivosti.',
+    description:
+      'Dizajn korisničkih sučelja i prototipiranje uz suradnju s proizvodnim timom. Istraživanje potreba korisnika, izrada žičanih okvira i vođenje testiranja upotrebljivosti. Prednost je poznavanje Figma alata.',
     imageColor: 'fuchsia',
   },
   {
@@ -54,7 +59,8 @@ export const jobs: Job[] = [
     title: 'DevOps inženjer',
     company: 'CloudWorks',
     location: 'Rijeka',
-    description: 'Postavljanje CI/CD procesa, automatizacija i upravljanje infrastrukturom.',
+    description:
+      'Postavljanje i održavanje CI/CD procesa, automatizacija buildova i deploya, praćenje sustava te optimizacija troškova. Rad s Dockerom i Kubernetesom uz IaC prakse (Terraform).',
     imageColor: 'slategray',
   },
   {
@@ -62,7 +68,8 @@ export const jobs: Job[] = [
     title: 'QA inženjer',
     company: 'TestLab',
     location: 'Zagreb',
-    description: 'Automatizacija testova i ručno testiranje web aplikacija.',
+    description:
+      'Automatizacija testova i ručno testiranje web aplikacija. Pisanje test planova, definiranje slučajeva testiranja i rad s alatima za automatizaciju (Playwright/Cypress). Suradnja s timom na poboljšanju kvalitete.',
     imageColor: 'gold',
   },
   {
@@ -70,7 +77,8 @@ export const jobs: Job[] = [
     title: 'Product manager',
     company: 'MarketLead',
     location: 'Zagreb',
-    description: 'Vođenje razvoja proizvoda, definiranje roadmapa i suradnja s timovima.',
+    description:
+      'Vođenje razvoja proizvoda kroz definiranje vizije, prioriteta i roadmapa. Uska suradnja s dizajnom, inženjeringom i prodajom. Prikupljanje povratnih informacija od korisnika i mjerenje uspješnosti izdanja.',
     imageColor: 'olive',
   },
   {
@@ -78,7 +86,8 @@ export const jobs: Job[] = [
     title: 'Poslovni analitičar',
     company: 'BizConsult',
     location: 'Split',
-    description: 'Analiza zahtjeva i komunikacija s dionicima u projektima.',
+    description:
+      'Analiza poslovnih zahtjeva, izrada specifikacija i modela procesa. Fasilitacija komunikacije između dionika i tehničkih timova te podrška u testiranju i rolloutu novih rješenja.',
     imageColor: 'peru',
   },
   {
@@ -86,7 +95,8 @@ export const jobs: Job[] = [
     title: 'Asistent za istraživanje',
     company: 'Sveučilište u Zagrebu',
     location: 'Zagreb',
-    description: 'Pomoć pri akademskim istraživanjima i analiza podataka.',
+    description:
+      'Pomoć pri akademskim istraživanjima, prikupljanje podataka i izrada analitičkih izvještaja. Sudjelovanje u pripremi publikacija i prezentacija uz mentorstvo voditelja projekta.',
     imageColor: 'khaki',
   },
   {
@@ -94,7 +104,8 @@ export const jobs: Job[] = [
     title: 'Pripravnik za UI/UX',
     company: 'DesignHub',
     location: 'Zagreb',
-    description: 'Pripravništvo u dizajnu sučelja i izradi vizualnih rješenja.',
+    description:
+      'Pripravništvo u dizajnu sučelja i izradi vizualnih rješenja. Učenje kroz rad s iskusnim mentorima, izrada prototipova i prilagodba dizajna temeljem povratnih informacija korisnika.',
     imageColor: 'plum',
   },
   {
@@ -102,7 +113,8 @@ export const jobs: Job[] = [
     title: 'Služba za korisnike',
     company: 'Supporto',
     location: 'Dubrovnik',
-    description: 'Rad u korisničkoj podršci, komunikacija s klijentima i rješavanje upita.',
+    description:
+      'Rad u korisničkoj podršci, komunikacija s klijentima i rješavanje upita putem više kanala. Dokumentiranje slučajeva, eskalacija složenijih problema i suradnja s proizvodnim timom na poboljšanjima.',
     imageColor: 'turquoise',
   },
 ];
