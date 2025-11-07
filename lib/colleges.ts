@@ -6,6 +6,7 @@ export type College = {
   image?: string;
   imageColor?: string;
   programs?: string[];
+  tags?: string[];
 };
 
 export const colleges: College[] = [
@@ -17,6 +18,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'indigo',
     image: '/colleges/fer_logo.png',
+    tags: ['engineering', 'computer-science', 'it'],
   },
   {
     id: '2',
@@ -26,6 +28,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'teal',
     image: '/colleges/gradjevina_logo.png',
+    tags: ['engineering', 'civil', 'practical'],
   },
   {
     id: '3',
@@ -35,6 +38,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'fuchsia',
     image: '/colleges/likovna_akademija.png',
+    tags: ['art', 'design', 'creative'],
   },
   {
     id: '4',
@@ -43,6 +47,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'amber',
     image: '/colleges/efzg_logo.png',
+    tags: ['business', 'economics', 'social'],
   },
   {
     id: '5',
@@ -52,6 +57,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'green',
     image: '/colleges/agronomski_logo.png',
+    tags: ['agriculture', 'environment', 'practical'],
   },
   {
     id: '6',
@@ -61,6 +67,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'slateblue',
     image: '/colleges/tz_logo.svg',
+    tags: ['technical', 'vocational', 'practical'],
   },
   {
     id: '7',
@@ -70,6 +77,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'crimson',
     image: '/colleges/medicina_logo.png',
+    tags: ['medicine', 'health', 'research'],
   },
   {
     id: '8',
@@ -79,6 +87,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'coral',
     image: '/colleges/stomatoloski_logo.png',
+    tags: ['dental', 'health', 'practical'],
   },
   {
     id: '9',
@@ -88,6 +97,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'sky',
     image: '/colleges/fsb_logo.png',
+    tags: ['mechanical', 'engineering', 'practical'],
   },
   {
     id: '10',
@@ -97,6 +107,7 @@ export const colleges: College[] = [
     location: 'Zagreb',
     imageColor: 'lime',
     image: '/colleges/ffzg_logo.png',
+    tags: ['social', 'humanities', 'theory'],
   },
 ];
 

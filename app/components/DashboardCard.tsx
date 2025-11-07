@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 import { placeholderImage } from '../../lib/placeholders';
 
 type Props = {
   title: string;
-  href: string;
+  href?: string;
+  onClick?: () => void;
   image?: string;
   imageColor?: string;
   icon?: string; // optional icon key
 };
 
-const DashboardCard: React.FC<Props> = ({ title, href, image, imageColor = 'gray', icon }) => {
+const DashboardCard: React.FC<Props> = ({ title, href, onClick, image, imageColor = 'gray', icon }) => {
   const img = image || placeholderImage('480x270', title, imageColor);
 
   const renderIcon = (key: string) => {
@@ -106,23 +108,45 @@ const DashboardCard: React.FC<Props> = ({ title, href, image, imageColor = 'gray
     return mapping[color] || mapping.gray;
   };
 
+  const inner = (
+    <article className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-200">
+      <div
+        className="w-full h-28 md:h-40 lg:h-44 overflow-hidden flex items-center justify-center"
+        style={{ background: icon ? bgStyle(imageColor) : undefined }}
+      >
+        {icon ? (
+          <div className="flex items-center justify-center">{renderIcon(icon)}</div>
+        ) : (
+          <div className="relative w-full h-full">
+            <Image src={img} alt={title} className="object-cover" fill unoptimized />
+          </div>
+        )}
+      </div>
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold text-gray-800">{title}</h3>
+      </div>
+    </article>
+  );
+
+  if (onClick) {
+    return (
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') onClick();
+        }}
+        className="block max-w-xs w-full cursor-pointer"
+      >
+        {inner}
+      </div>
+    );
+  }
+
   return (
-    <Link href={href} className="block max-w-xs w-full">
-      <article className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-200">
-        <div
-          className="w-full h-28 md:h-40 lg:h-44 overflow-hidden flex items-center justify-center"
-          style={{ background: icon ? bgStyle(imageColor) : undefined }}
-        >
-          {icon ? (
-            <div className="flex items-center justify-center">{renderIcon(icon)}</div>
-          ) : (
-            <img src={img} alt={title} className="w-full h-full object-cover" />
-          )}
-        </div>
-        <div className="p-6">
-          <h3 className="text-2xl font-semibold text-gray-800">{title}</h3>
-        </div>
-      </article>
+    <Link href={href || '#'} className="block max-w-xs w-full">
+      {inner}
     </Link>
   );
 };
