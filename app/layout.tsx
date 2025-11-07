@@ -30,7 +30,7 @@ export default async function RootLayout({
         <div className="font-sans min-h-screen flex flex-col items-center gap-10 w-full">
           <Header />
           <main className="w-full max-w-5xl px-4">{children}</main>
-          
+          <script src="https://cdn.userway.org/widget.js" data-account="NgZx03esZ1"></script>
           {/* Chatbot */}
           <Chatbot />
         </div>
