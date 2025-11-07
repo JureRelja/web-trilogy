@@ -21,6 +21,15 @@ export const mentors: Mentor[] = [
     bio: 'Poduzetnik i mentor za startupe, fokusira se na proizvod i rast.',
     college: 'Ekonomski fakultet, Zagreb',
     imageColor: 'amber',
+    
+  },
+  {
+    id: '16',
+    name: "izv. prof. dr. sc. Vlado Sruk",
+    bio: 'Izvanredni profesor, Zavod za elektroniku, mikroelektroniku, računalne i inteligentne sustave',
+    college: 'Fakultet elektrotehnike i računarstva, Zagreb',
+    imageColor: 'amber',
+    image: '/vlado_sruk.jpeg',
   },
   {
     id: '3',
