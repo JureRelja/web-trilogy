@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
-import Chatbot from "./Chatbot"; // provjeri da je putanja ispravna
+import Chatbot from './Chatbot'; // provjeri da je putanja ispravna
 import Script from 'next/script';
 
 const geistSans = Geist({
