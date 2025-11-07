@@ -81,7 +81,7 @@ export default function Chatbot() {
           }}
         >
           <div style={{ padding: 12, background: "#3b82f6", color: "white", fontWeight: "bold", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div>AI agent 🎓</div>
+            <div>UniPath agent 🎓</div>
             <button aria-label="Close chat" onClick={() => setOpen(false)} style={{ background: "transparent", border: "none", color: "white", fontSize: 18 }}>
               ×
             </button>

@@ -60,9 +60,9 @@ const Header = () => {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-lg md:text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-pink-500">
-                Trilogy Careers
+                UniPath ZG
               </span>
-              <span className="text-xs text-gray-500 -mt-0.5">college • mentors • jobs</span>
+              <span className="text-xs text-gray-500 -mt-0.5">fakulteti • mentori • poslovi</span>
             </div>
           </Link>
         </div>
