@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
-export default function StudentGroupDetails({ params }: Props) {
-  const group = getStudentGroupById(params.id);
+export default async function StudentGroupDetails({ params }: Props) {
+  const paramsAwaited = await params;
+  const group = getStudentGroupById(paramsAwaited.id);
   if (!group) notFound();
 
   const img = group.image || placeholderImage('800x360', group.name);

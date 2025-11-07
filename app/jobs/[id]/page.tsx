@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
-export default function JobDetails({ params }: Props) {
-  const job = getJobById(params.id);
+export default async function JobDetails({ params }: Props) {
+  const paramsAwaited = await params;
+  const job = getJobById(paramsAwaited.id);
   if (!job) notFound();
 
   const img = job.image || placeholderImage('800x360', job.title);

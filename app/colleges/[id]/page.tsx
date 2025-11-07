@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { placeholderImage } from '../../../lib/placeholders';
 
 type Props = {
-  params: { id: string };
+   params: Promise<{ id: string }>
 };
 
 export default async function CollegeDetailsPage({ params }: Props) {
-  const college = getCollegeById(params.id);
+  const paramsAwaited = await params;
+  const college = getCollegeById(paramsAwaited.id);
 
   if (!college) {
     notFound();
