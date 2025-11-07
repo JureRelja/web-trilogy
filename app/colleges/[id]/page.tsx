@@ -2,6 +2,7 @@ import React from 'react';
 import { getCollegeById } from '../../../lib/colleges';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { placeholderImage } from '../../../lib/placeholders';
 
 type Props = {
@@ -30,11 +31,33 @@ export default async function CollegeDetailsPage({ params }: Props) {
         {college?.location && <p className="text-gray-600">{college.location}</p>}
       </header>
 
-      <img src={img} alt={college?.name} className="w-full h-60 object-cover rounded-md mb-6" />
+      <Image
+        src={img}
+        alt={college?.name || 'College image'}
+        width={1200}
+        height={360}
+        className="w-full h-60 object-cover rounded-md mb-6"
+      />
 
       <section>
         <h2 className="text-xl font-semibold mb-2">O sastanici</h2>
-        <p className="text-gray-700">{college?.description}</p>
+        {college?.description && (
+          <p className="text-gray-700 leading-relaxed">
+            {college.description
+              .split(/<br\s*\/?>(?:\s*<br\s*\/?>)*/i) // split on one or multiple <br> groups
+              .map((segment, idx, arr) => (
+                <React.Fragment key={idx}>
+                  {segment.trim()}
+                  {idx < arr.length - 1 && (
+                    <>
+                      <br />
+                      <br />
+                    </>
+                  )}
+                </React.Fragment>
+              ))}
+          </p>
+        )}
       </section>
     </div>
   );
